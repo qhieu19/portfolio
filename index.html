@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alex Nguyen — Java Engineer</title>
+  <title>Nguyen Quang Hieu — Senior Java Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -223,10 +223,7 @@
 
     .skill-item:hover { background: var(--surface); }
 
-    .skill-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
+    .skill-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
 
     .skill-name {
       font-family: var(--mono);
@@ -235,10 +232,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .skill-level {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+    .skill-level { font-size: 0.75rem; color: var(--muted); }
 
     .skill-bar {
       height: 2px;
@@ -254,6 +248,78 @@
       background: var(--accent);
     }
 
+    /* ── EXPERIENCE ── */
+    .experience-section {
+      padding: 6rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .exp-card:hover { border-color: var(--accent); }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-company {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+    }
+
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent2);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .exp-role {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .exp-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
     /* ── PROJECTS ── */
     .projects-section {
       padding: 6rem 4rem;
@@ -262,7 +328,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
 
@@ -304,13 +370,13 @@
 
     .project-title {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 0.75rem;
     }
 
     .project-desc {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       margin-bottom: 1.5rem;
     }
 
@@ -329,6 +395,43 @@
       letter-spacing: 0.05em;
     }
 
+    /* ── AWARDS ── */
+    .awards-section {
+      padding: 6rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .award-item {
+      background: var(--bg);
+      padding: 1.75rem 2rem;
+      transition: background 0.2s;
+    }
+
+    .award-item:hover { background: var(--surface); }
+
+    .award-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+
+    .award-name {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .award-year {
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
     /* ── CONTACT ── */
     .contact-section {
       padding: 6rem 4rem;
@@ -345,16 +448,9 @@
       margin-bottom: 1.5rem;
     }
 
-    .contact-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .contact-title em { font-style: italic; color: var(--accent); }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
 
     .contact-row {
       display: flex;
@@ -402,16 +498,17 @@
         grid-template-columns: 1fr;
         padding: 7rem 1.5rem 3rem;
       }
-
       .hero::before { display: none; }
 
       .skills-section,
+      .experience-section,
       .projects-section,
+      .awards-section,
       .contact-section { padding: 4rem 1.5rem; }
 
       .contact-section { grid-template-columns: 1fr; gap: 3rem; }
-
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
+      .exp-header { flex-direction: column; }
     }
 
     @media (max-width: 480px) {
@@ -424,10 +521,12 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">AN.DEV</div>
+    <div class="nav-logo">NQH.DEV</div>
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#awards">Awards</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -435,13 +534,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-tag">Available for work</div>
+      <div class="hero-tag">Open to opportunities</div>
       <h1 class="hero-title">
         Senior<br><em>Java</em><br>Engineer
       </h1>
       <p class="hero-desc">
-        5 years building scalable backend systems, microservices, and APIs.
-        Currently expanding into modern frontend with React.
+        5 years building scalable backend systems, microservices, and AI-powered platforms at FPT Software.
+        Led teams of 15+, shipped production systems serving millions of daily requests.
       </p>
       <a href="#contact" class="hero-cta">Get in touch →</a>
     </div>
@@ -452,12 +551,12 @@
         <span class="stat-label">Years of<br>Experience</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">20+</span>
-        <span class="stat-label">Projects<br>Shipped</span>
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Team Members<br>Led</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Open Source<br>Contributions</span>
+        <span class="stat-number">5</span>
+        <span class="stat-label">Awards &<br>Recognitions</span>
       </div>
     </div>
   </section>
@@ -471,7 +570,7 @@
     <div class="skills-grid">
       <div class="skill-item">
         <div class="skill-icon">☕</div>
-        <div class="skill-name">Java</div>
+        <div class="skill-name">Java 7/8/17/21</div>
         <div class="skill-level">Expert</div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
       </div>
@@ -479,32 +578,95 @@
         <div class="skill-icon">🍃</div>
         <div class="skill-name">Spring Boot</div>
         <div class="skill-level">Expert</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:93%"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-icon">🐘</div>
-        <div class="skill-name">PostgreSQL</div>
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">AWS / Azure</div>
         <div class="skill-level">Advanced</div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-icon">🐳</div>
-        <div class="skill-name">Docker / K8s</div>
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">Oracle / PostgreSQL</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-name">AI / GenAI</div>
         <div class="skill-level">Intermediate</div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-icon">🎨</div>
-        <div class="skill-name">HTML & CSS</div>
+        <div class="skill-icon">⚛️</div>
+        <div class="skill-name">ReactJS</div>
         <div class="skill-level">Intermediate</div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-icon">⚡</div>
-        <div class="skill-name">JavaScript</div>
-        <div class="skill-level">Learning</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:40%"></div></div>
+        <div class="skill-icon">🐳</div>
+        <div class="skill-name">Docker / DevOps</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:68%"></div></div>
       </div>
+      <div class="skill-item">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Workato / Jenkins</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience-section" id="experience">
+    <div class="section-header">
+      <h2 class="section-title">Experience</h2>
+      <span class="section-num">02 /</span>
+    </div>
+    <div class="exp-timeline">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-company">FPT Software</span>
+          <span class="exp-period">2021 — PRESENT</span>
+        </div>
+        <div class="exp-role">Senior Software Engineer · Hanoi, Vietnam</div>
+        <p class="exp-desc">
+          Led a backend team of 15 engineers on a large-scale telecom platform in Singapore, serving millions of daily requests.
+          Designed RESTful APIs integrated with billing, mobile, broadband, and TV systems.
+          Automated workflows with Workato, integrating Jira, Salesforce, and Confluence.
+        </p>
+        <div class="exp-tags">
+          <span class="tag">Java 7/8/17</span>
+          <span class="tag">Spring Framework</span>
+          <span class="tag">Oracle DB</span>
+          <span class="tag">Couchbase</span>
+          <span class="tag">EJB / JMS</span>
+          <span class="tag">WebLogic</span>
+          <span class="tag">Workato</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-company">VNPT Technology</span>
+          <span class="exp-period">2020 — 2021</span>
+        </div>
+        <div class="exp-role">Software Engineer · Thanh Hoa, Vietnam</div>
+        <p class="exp-desc">
+          Built real-time backend systems including a Spring Boot-based data streaming and chat platform.
+          Developed scalable APIs and maintained production systems in Agile/Scrum teams of 20+ members.
+        </p>
+        <div class="exp-tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Real-time Systems</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -512,49 +674,149 @@
   <section class="projects-section" id="projects">
     <div class="section-header">
       <h2 class="section-title">Projects</h2>
-      <span class="section-num">02 /</span>
+      <span class="section-num">03 /</span>
     </div>
     <div class="projects-grid">
+
       <div class="project-card">
-        <div class="project-tag">Backend</div>
-        <h3 class="project-title">PayFlow API</h3>
+        <div class="project-tag">Telecom · Singapore</div>
+        <h3 class="project-title">Telecom Core Backend Platform</h3>
         <p class="project-desc">
-          High-throughput payment processing service handling 10k+ transactions/sec
-          with idempotency guarantees and real-time fraud detection.
+          Large-scale telecom backend serving millions of daily requests across billing, mobile, broadband, and TV operations.
         </p>
         <div class="project-stack">
-          <span class="tag">Java 21</span>
-          <span class="tag">Spring Boot</span>
-          <span class="tag">Kafka</span>
-          <span class="tag">Redis</span>
+          <span class="tag">Java 17</span>
+          <span class="tag">Spring</span>
+          <span class="tag">Oracle</span>
+          <span class="tag">Couchbase</span>
+          <span class="tag">WebLogic</span>
         </div>
       </div>
+
       <div class="project-card">
-        <div class="project-tag">Microservices</div>
-        <h3 class="project-title">InventoryMS</h3>
+        <div class="project-tag">AI · Internal Tool</div>
+        <h3 class="project-title">Personal Learning Assistant</h3>
         <p class="project-desc">
-          Event-driven inventory management system across 12 microservices
-          with CQRS pattern and distributed tracing.
+          AI-powered learning assistant with RAG pipeline. Integrated Gemini, LLaMA, and MiniLM into microservices-based architecture.
+        </p>
+        <div class="project-stack">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Python</span>
+          <span class="tag">ReactJS</span>
+          <span class="tag">AWS</span>
+          <span class="tag">OpenAI</span>
+          <span class="tag">Gemini</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">AI · Internal Tool</div>
+        <h3 class="project-title">AI SQL Generator</h3>
+        <p class="project-desc">
+          Natural language to SQL translator using Gemini AI. Designed REST APIs and optimized MySQL queries for AI integration.
+        </p>
+        <div class="project-stack">
+          <span class="tag">Gemini AI</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Python</span>
+          <span class="tag">ReactJS</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Insurance · SEA</div>
+        <h3 class="project-title">SEA Car Insurance System</h3>
+        <p class="project-desc">
+          Backend system for insurance operations across Thailand and SEA — policy issuance, claims, customer data, and payments.
         </p>
         <div class="project-stack">
           <span class="tag">Java</span>
-          <span class="tag">RabbitMQ</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Docker</span>
+          <span class="tag">Spring</span>
+          <span class="tag">Angular</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">AWS</span>
         </div>
       </div>
+
       <div class="project-card">
-        <div class="project-tag">Full Stack</div>
-        <h3 class="project-title">Portfolio Site</h3>
+        <div class="project-tag">Enterprise · Azure</div>
+        <h3 class="project-title">Meeting Room Booking</h3>
         <p class="project-desc">
-          This very site — built with pure HTML & CSS as part of learning
-          modern frontend development. No JS, fully responsive.
+          Enterprise meeting room management with Azure SSO (Entra ID), Liquibase DB versioning, deployed on Azure Cloud.
         </p>
         <div class="project-stack">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS Grid</span>
-          <span class="tag">Flexbox</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Thymeleaf</span>
+          <span class="tag">Azure</span>
+          <span class="tag">Liquibase</span>
         </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Education · Research</div>
+        <h3 class="project-title">FPT University Event System</h3>
+        <p class="project-desc">
+          Rebuilt university event management system. Conducted research with Université Sorbonne Paris Nord on AI & Blockchain.
+        </p>
+        <div class="project-stack">
+          <span class="tag">Java</span>
+          <span class="tag">AI</span>
+          <span class="tag">Blockchain</span>
+          <span class="tag">Research</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards-section" id="awards">
+    <div class="section-header">
+      <h2 class="section-title">Awards & Certs</h2>
+      <span class="section-num">04 /</span>
+    </div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-name">Best Rookie</div>
+        <div class="award-year">2020</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">⭐</div>
+        <div class="award-name">Outstanding Employee of the Year</div>
+        <div class="award-year">2023</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🥇</div>
+        <div class="award-name">Best Project of the Year</div>
+        <div class="award-year">2024</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">⭐</div>
+        <div class="award-name">Outstanding Employee of the Year</div>
+        <div class="award-year">2024</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🚀</div>
+        <div class="award-name">Lead Best Project of the Year</div>
+        <div class="award-year">2024</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">📜</div>
+        <div class="award-name">Google Project Management</div>
+        <div class="award-year">2023</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🤖</div>
+        <div class="award-name">Google GenAI Certificate</div>
+        <div class="award-year">2025</div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">⚙️</div>
+        <div class="award-name">Workato Automation Pro I/II/III</div>
+        <div class="award-year">2024</div>
       </div>
     </div>
   </section>
@@ -564,21 +826,21 @@
     <div>
       <h2 class="contact-title">Let's<br><em>work</em><br>together.</h2>
       <p style="color:var(--muted); font-size:0.9rem; max-width:320px;">
-        Open to backend, full-stack, or any role where clean architecture matters.
+        Open to backend, full-stack, or AI engineering roles where clean architecture and real impact matter.
       </p>
     </div>
     <div class="contact-info">
       <div class="contact-row">
         <span class="contact-row-label">EMAIL</span>
-        <span class="contact-row-value">alex@example.com</span>
+        <span class="contact-row-value">hieu19.dev@gmail.com</span>
       </div>
       <div class="contact-row">
         <span class="contact-row-label">GITHUB</span>
-        <span class="contact-row-value">github.com/alexnguyen</span>
+        <span class="contact-row-value">github.com/qhieu19</span>
       </div>
       <div class="contact-row">
-        <span class="contact-row-label">LINKEDIN</span>
-        <span class="contact-row-value">linkedin.com/in/alexnguyen</span>
+        <span class="contact-row-label">PHONE</span>
+        <span class="contact-row-value">(+84) 342 217 180</span>
       </div>
       <div class="contact-row">
         <span class="contact-row-label">LOCATION</span>
@@ -589,7 +851,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <span>© 2026 Alex Nguyen</span>
+    <span>© 2026 Nguyen Quang Hieu</span>
     <span>Built with HTML & CSS only</span>
   </footer>
 
